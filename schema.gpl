@@ -9,14 +9,24 @@ type CreateBookDTO {
   authorId: Float!
 }
 
+type CreateAuthorDTO {
+  id: Float!
+  name: String!
+  age: Float!
+}
+
 type Query {
   books: [CreateBookDTO!]!
   book(id: Float!): CreateBookDTO!
+  getAuthors: [CreateAuthorDTO!]!
+  author(id: Float!): CreateAuthorDTO!
 }
 
 type Mutation {
   createBook(data: InputBook!): CreateBookDTO!
   updateBook(dataToUpdate: UpdateBookInput!, id: Float!): CreateBookDTO!
+  createAuthor(data: InputAuthor!): CreateAuthorDTO!
+  updateAuthor(data: UpdateAuthorInput!, id: Float!): CreateAuthorDTO!
 }
 
 input InputBook {
@@ -29,4 +39,14 @@ input UpdateBookInput {
   name: String
   genre: String
   authorId: Float
+}
+
+input InputAuthor {
+  name: String!
+  age: Float!
+}
+
+input UpdateAuthorInput {
+  name: String
+  age: Float
 }

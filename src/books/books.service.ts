@@ -51,7 +51,7 @@ export class BooksService {
        // const result = await  getConnection().createQueryBuilder().update(BookEntity).set(thingsToUpdate)
        //  .where('id = :id', {id : id}).execute();
 
-        console.log("result is: ", bookExists);
+        //console.log("result is: ", bookExists);
         return bookExists;
     }
 }
