@@ -1,4 +1,6 @@
-import { Field, ObjectType} from 'type-graphql';
+//import { Field, ObjectType} from 'type-graphql';
+import { ObjectType, Field, InputType } from '@nestjs/graphql';
+
 
 @ObjectType()
 export class CreateBookDTO {
