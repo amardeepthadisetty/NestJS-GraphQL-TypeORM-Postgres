@@ -13,6 +13,7 @@ type CreateAuthorDTO {
   id: Float!
   name: String!
   age: Float!
+  getbooks: [CreateBookDTO!]!
 }
 
 type Query {

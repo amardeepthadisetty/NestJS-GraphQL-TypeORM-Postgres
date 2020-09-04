@@ -1,4 +1,5 @@
 import { ObjectType, Field } from "@nestjs/graphql";
+import { CreateBookDTO } from "src/books/dto/create-book-dto";
 
 @ObjectType()
 export class CreateAuthorDTO {
@@ -10,4 +11,7 @@ export class CreateAuthorDTO {
 
     @Field()
     readonly age: number;
+
+    @Field( type => [CreateBookDTO])
+    readonly getbooks?: CreateBookDTO[];
 }

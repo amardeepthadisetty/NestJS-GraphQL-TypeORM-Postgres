@@ -24,6 +24,20 @@ export class BooksService {
         return await this.BooksRepository.save(book);
     }
 
+    async getBooksBasedOnAuthorId(id:number){
+        try {
+            const bookExists = await this.BooksRepository.find({authorId: id});
+            if( !bookExists){
+                throw new Error('Book Does not exists');
+            }
+
+            return bookExists;
+        } catch (error) {
+            console.log("error is: ", error);
+        }
+        
+    }
+
     async getBookBasedOnId(id:number){
         const bookExists = await this.BooksRepository.findOne({id: id});
         if( !bookExists){
