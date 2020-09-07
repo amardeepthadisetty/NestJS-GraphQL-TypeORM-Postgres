@@ -10,6 +10,7 @@ import { BookEntity } from 'src/books/books.entity';
   imports: [
     TypeOrmModule.forFeature([AuthorEntity, BookEntity])
   ],
+  exports: [ AuthorService],
   providers: [AuthorResolver, AuthorService, BooksService]
 })
 export class AuthorModule {}

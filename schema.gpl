@@ -2,18 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type CreateBookDTO {
-  id: Float!
-  name: String!
-  genre: String!
-  authorId: Float!
-}
-
 type CreateAuthorDTO {
   id: Float!
   name: String!
   age: Float!
   getbooks: [CreateBookDTO!]!
+}
+
+type CreateBookDTO {
+  id: Float!
+  name: String!
+  genre: String!
+  authorId: Float!
+  getAuthor: CreateAuthorDTO!
 }
 
 type Query {

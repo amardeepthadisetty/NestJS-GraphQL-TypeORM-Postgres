@@ -22,7 +22,7 @@ export class AuthorResolver {
 
     @ResolveField()
     async getbooks(@Parent() author: CreateAuthorDTO) {
-        const { id } = author;
+       const { id } = author;
        return await this.bookService.getBooksBasedOnAuthorId(id);
        //return '';
     }
